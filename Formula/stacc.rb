@@ -1,25 +1,25 @@
 class Stacc < Formula
   desc "A stacked-diff CLI."
   homepage "https://github.com/TinyDogTech/stacc"
-  version "0.4.1"
+  version "0.4.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/TinyDogTech/stacc/releases/download/v0.4.1/stacc-aarch64-apple-darwin.tar.xz"
-      sha256 "d2bf3e8f17804daf22943935f8dda8aab2cae74e372308cf9638d74ef598d89e"
+      url "https://github.com/TinyDogTech/stacc/releases/download/v0.4.2/stacc-aarch64-apple-darwin.tar.xz"
+      sha256 "ae5fdeec358fe91aa0cf01328ca38ac6875d839525e8ff71d0324b526e7c1814"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/TinyDogTech/stacc/releases/download/v0.4.1/stacc-x86_64-apple-darwin.tar.xz"
-      sha256 "d3cafe3bae146de7467bd2e9624780075a0690cab148eaf23dfb1684d4705417"
+      url "https://github.com/TinyDogTech/stacc/releases/download/v0.4.2/stacc-x86_64-apple-darwin.tar.xz"
+      sha256 "06b72b7b981715c5d3bae3fee2bedaf8a83d541831ee8ead3ab4616def9f1b70"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/TinyDogTech/stacc/releases/download/v0.4.1/stacc-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "b67a4cfc42c498e1cad8820486c18bf9c6a87c5b35c8f829101793e2d924fc89"
+      url "https://github.com/TinyDogTech/stacc/releases/download/v0.4.2/stacc-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "a36dff3fa668208a1730a3a44d2887a2a03751d34babd356fa915e595e5fa25f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/TinyDogTech/stacc/releases/download/v0.4.1/stacc-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "5390f807c1d465a11057d7a478a6c5297d86ceaabb5ec688e4723702a3d96b85"
+      url "https://github.com/TinyDogTech/stacc/releases/download/v0.4.2/stacc-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "51142878e5a8b986f16884abfde844b632d91e22a35e7c5cd7cc031cec7a0732"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
@@ -48,10 +48,18 @@ class Stacc < Formula
   end
 
   def install
-    bin.install "st", "stacc" if OS.mac? && Hardware::CPU.arm?
-    bin.install "st", "stacc" if OS.mac? && Hardware::CPU.intel?
-    bin.install "st", "stacc" if OS.linux? && Hardware::CPU.arm?
-    bin.install "st", "stacc" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "st", "stacc"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "st", "stacc"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "st", "stacc"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "st", "stacc"
+    end
 
     install_binary_aliases!
 
