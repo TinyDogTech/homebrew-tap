@@ -1,25 +1,25 @@
 class Stacc < Formula
   desc "A stacked-diff CLI."
   homepage "https://github.com/TinyDogTech/stacc"
-  version "0.4.2"
+  version "0.4.3"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/TinyDogTech/stacc/releases/download/v0.4.2/stacc-aarch64-apple-darwin.tar.xz"
-      sha256 "ae5fdeec358fe91aa0cf01328ca38ac6875d839525e8ff71d0324b526e7c1814"
+      url "https://github.com/TinyDogTech/stacc/releases/download/v0.4.3/stacc-aarch64-apple-darwin.tar.xz"
+      sha256 "f56c328f72485c202fc4f4d6d62dd4f3fb00d5bfc04fea96f91b30c12f2de240"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/TinyDogTech/stacc/releases/download/v0.4.2/stacc-x86_64-apple-darwin.tar.xz"
-      sha256 "06b72b7b981715c5d3bae3fee2bedaf8a83d541831ee8ead3ab4616def9f1b70"
+      url "https://github.com/TinyDogTech/stacc/releases/download/v0.4.3/stacc-x86_64-apple-darwin.tar.xz"
+      sha256 "a97eb6d1811a1d7258b1e1af9a213b88077c27a38cec1d98639195f45541104d"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/TinyDogTech/stacc/releases/download/v0.4.2/stacc-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "a36dff3fa668208a1730a3a44d2887a2a03751d34babd356fa915e595e5fa25f"
+      url "https://github.com/TinyDogTech/stacc/releases/download/v0.4.3/stacc-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "6c65d5370eb2228b065e7b013d3dcaae2cfab95f4eafda6b18c2fbfae8c4ac8f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/TinyDogTech/stacc/releases/download/v0.4.2/stacc-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "51142878e5a8b986f16884abfde844b632d91e22a35e7c5cd7cc031cec7a0732"
+      url "https://github.com/TinyDogTech/stacc/releases/download/v0.4.3/stacc-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "3ac9fd6f618ef41daaf319f9fa53bcedea462b6643bd85a61604b300c2315fdf"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
